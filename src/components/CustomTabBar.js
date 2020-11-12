@@ -25,7 +25,7 @@ const TabItemCenter = styled.View`
   align-items: center;
   background-color: #fff;
   border-radius: 35px;
-  border: 2px solid #73529b;
+  border: 1px solid #73529b;
   margin-top: -40px;
 `;
 
