@@ -19,12 +19,12 @@ const Text = styled.Text`
   font-size: 18px;
 `;
 
-function CustomButton(props) {
+function SessionButton(props) {
   return (
-    <Container>
+    <Container onPress={props.onPress}>
       <Text>{props.text}</Text>
     </Container>
   );
 }
 
-export default CustomButton;
+export default SessionButton;
