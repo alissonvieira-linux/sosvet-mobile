@@ -19,7 +19,9 @@ function Login() {
   const navigation = useNavigation();
 
   function handleNavigateToHomeButton() {
-    navigation.navigate('Home');
+    navigation.reset({
+      routes: [{ name: 'TabStack' }]
+    });
   }
 
   return (
