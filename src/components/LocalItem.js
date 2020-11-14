@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
+import { useNavigation } from '@react-navigation/native';
+
 const Container = styled.View`
   width: 100%;
   height: 120px;
@@ -53,6 +55,12 @@ const ProfileButtonText = styled.Text`
 `;
 
 function LocalItem() {
+  const navigation = useNavigation();
+
+  function handleNavigationToProfile() {
+    navigation.navigate('PlaceProfile');
+  }
+
   return (
     <Container>
       <LocalImg />
@@ -60,7 +68,7 @@ function LocalItem() {
         <LocalName>Patinhas do Bem - SJC</LocalName>
         <LocalCity>São José dos Campos</LocalCity>
 
-        <ProfileButton>
+        <ProfileButton onPress={handleNavigationToProfile}>
           <ProfileButtonText>VISUALIZAR PERFIL</ProfileButtonText>
         </ProfileButton>
       </LocalInfoBox>
