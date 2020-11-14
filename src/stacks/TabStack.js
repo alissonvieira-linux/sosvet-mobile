@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 function TabStack() {
   return (
     <>
-    <StatusBar backgroundColor="#fff" style="dark" />
+    <StatusBar backgroundColor="transparent" style="dark" />
     <Tab.Navigator 
       initialRouteName="Home"
       tabBar={props => <CustomTabBar {...props} />}
