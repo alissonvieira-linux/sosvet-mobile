@@ -5,7 +5,6 @@ import { AntDesign, Entypo } from '@expo/vector-icons';
 
 const Container = styled.View`
   width: 100%;
-  max-width: 330px;
   height: 45px;
   background-color: #fff;
   padding: 10px;
