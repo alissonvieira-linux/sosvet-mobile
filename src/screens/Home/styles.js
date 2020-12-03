@@ -30,3 +30,19 @@ export const CountText = styled.Text`
   font-family: 'Roboto_700Bold';
   font-size: 14px;
 `;
+
+export const CalloutView = styled.View`
+  width: 160px;
+  height: 50px;
+  padding-horizontal: 16px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 4px;
+  justify-content: center;
+  elevation: 3;
+`;
+
+export const CalloutText = styled.Text`
+  color: #9669cf;
+  font-family: 'Roboto_700Bold';
+  font-size: 16px;
+`;

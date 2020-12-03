@@ -5,7 +5,6 @@ import {
   PurpleContainer,
   ActionIcons,
   GoBackButton,
-  FavoriteButton,
   TitleBox,
   Title,
   LightContainer,
@@ -16,8 +15,6 @@ import {
   AdressBox,
   TextLabel,
   SmallText,
-  GoogleMapsButton,
-  GoogleMapsButtonText,
   ActionsBox,
   WhatsAppButton,
   WhatsAppButtonText,
@@ -31,11 +28,11 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Linking } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
 
-function PlaceProfile() {
+function IncidentDetail() {
   const navigation = useNavigation();
 
-  const [placeName, setPlaceName] = useState('Vet Quality - Hospital Veterinário');
-  const [favorite, setFavorite] = useState(true);
+  const message = "Olá, estou entrando em contato para ajudar no caso da cadela atropelada.";
+  const [placeName, setPlaceName] = useState('Patinhas do Bem - SJC');
 
   useEffect(() => {
     const validatedName = verifyNameString(placeName);
@@ -55,14 +52,14 @@ function PlaceProfile() {
   }
 
   function sendWhatsapp() {
-    Linking.openURL('whatsapp://send?phone=5512988681090&text=Olá');
+    Linking.openURL(`whatsapp://send?phone=5512988681090&text=${message}`);
   }
 
   function sendMail() {
     MailComposer.composeAsync({
       subject: 'SOS VET | Novo contato',
       recipients: ['alissonvieira.github@gmail.com'],
-      body: 'Olá, estou entrando em contato por meio do SOS VET para conhecer um pouco mais do Vet Quality.'
+      body: message
     });
   }
   
@@ -73,17 +70,10 @@ function PlaceProfile() {
           <GoBackButton onPress={handleGoBack}>
             <MaterialIcons name="keyboard-arrow-left" size={35} color="#fff" />
           </GoBackButton>
-
-          <FavoriteButton onPress={() => setFavorite(!favorite)}>
-            {
-              favorite ? <Entypo name="heart" size={30} color="#fff" />
-              : <Entypo name="heart-outlined" size={30} color="#fff" />
-            }
-          </FavoriteButton>
         </ActionIcons>
 
         <TitleBox>
-            <Title>Informações Disponíveis</Title>
+            <Title>Detalhes do caso selecionado</Title>
           </TitleBox>
       </PurpleContainer>
       <LightContainer />
@@ -95,20 +85,22 @@ function PlaceProfile() {
         </PlaceInfo>
 
         <AdressBox>
-            <TextLabel>Endereço</TextLabel>
-            <SmallText>Rua Pedro Rachid, 304 - Santana</SmallText>
+            <TextLabel>Caso</TextLabel>
+            <SmallText>Cadelinha atropelada na avenida andrômeda</SmallText>
 
-            <TextLabel>Contato</TextLabel>
-            <SmallText>(12)98765-4321</SmallText>
+            <TextLabel>Descrição do caso</TextLabel>
+            <SmallText>
+              Uma cadelinha foi atropelada enquanto atravessava
+              a avenida. Ela precisa de uma cirurgia para consertar
+              sua patinha e voltar a andar normalmente.
+            </SmallText>
 
-            <TextLabel>Veja como chegar</TextLabel>
-            <GoogleMapsButton>
-              <GoogleMapsButtonText>Ver rotas no Google Maps</GoogleMapsButtonText>
-            </GoogleMapsButton>
+            <TextLabel>Valor necessário</TextLabel>
+            <SmallText>R$250,00</SmallText>
           </AdressBox>
 
           <ActionsBox>
-            <TextLabel>Ou, se preferir</TextLabel>
+            <TextLabel>Salve o dia! Seja o herói desse caso.</TextLabel>
 
             <WhatsAppButton onPress={sendWhatsapp}>
               <FontAwesome name="whatsapp" size={20} color="#fff" />
@@ -129,4 +121,4 @@ function PlaceProfile() {
   );
 }
 
-export default PlaceProfile;
+export default IncidentDetail;

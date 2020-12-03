@@ -20,13 +20,6 @@ function Favorites() {
       <Card>
         <Scroll showsVerticalScrollIndicator={false}>
           <LocalItem />
-          <LocalItem />
-          <LocalItem />
-          <LocalItem />
-          <LocalItem />
-          <LocalItem />
-          <LocalItem />
-          <LocalItem />
         </Scroll>
       </Card>
     </Container>

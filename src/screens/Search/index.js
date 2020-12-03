@@ -44,11 +44,6 @@ function Search() {
 
       <ResultsBox showsVerticalScrollIndicator={false}>
         <LocalItem />
-        <LocalItem />
-        <LocalItem />
-        <LocalItem />
-        <LocalItem />
-        <LocalItem />
       </ResultsBox>
      
       

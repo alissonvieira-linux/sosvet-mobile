@@ -65,7 +65,7 @@ function LocalItem() {
     <Container>
       <LocalImg />
       <LocalInfoBox>
-        <LocalName>Patinhas do Bem - SJC</LocalName>
+        <LocalName>Vet Quality - Hospital Veterinário</LocalName>
         <LocalCity>São José dos Campos</LocalCity>
 
         <ProfileButton onPress={handleNavigationToProfile}>
