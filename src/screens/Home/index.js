@@ -51,7 +51,7 @@ function Home() {
 
       <CountContainer>
         <CountText>
-          17 clínicas e 4 ONGs em sua cidade
+          1 clínicas e 0 ONGs em sua cidade
         </CountText>
       </CountContainer>
     </Container>

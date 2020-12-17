@@ -65,6 +65,10 @@ function PlaceProfile() {
       body: 'Olá, estou entrando em contato por meio do SOS VET para conhecer um pouco mais do Vet Quality.'
     });
   }
+
+  function handleOpenGoogleMaps() {
+    Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${-23.2648708},${-45.9112412}`);
+  }
   
   return (
     <>
@@ -102,7 +106,7 @@ function PlaceProfile() {
             <SmallText>(12)98765-4321</SmallText>
 
             <TextLabel>Veja como chegar</TextLabel>
-            <GoogleMapsButton>
+            <GoogleMapsButton onPress={handleOpenGoogleMaps}>
               <GoogleMapsButtonText>Ver rotas no Google Maps</GoogleMapsButtonText>
             </GoogleMapsButton>
           </AdressBox>

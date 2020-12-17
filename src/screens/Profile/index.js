@@ -16,13 +16,16 @@ import {
 
 import { FontAwesome } from '@expo/vector-icons';
 import SessionButton from '../../components/SessionButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function Profile() {
   const navigation = useNavigation();
 
-  function handleLogout() {
+  async function handleLogout() {
+    await AsyncStorage.removeItem('auth');
+
     navigation.reset({
-      routes: [{ name: 'Login' }]
+      routes: [{ name: 'Preload' }]
     });
   }
 

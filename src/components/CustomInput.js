@@ -23,7 +23,7 @@ function CustomInput(props) {
   return (
     <Container>
       <Entypo name={props.iconName} size={25} color="#9668CF"  />
-      <Input placeholder={props.placeholder} placeholderTextColor="#9668CF" secureTextEntry={props.password} />
+      <Input onChangeText={props.onChangeText} placeholder={props.placeholder} placeholderTextColor="#9668CF" secureTextEntry={props.password} />
     </Container>
   );
 }
